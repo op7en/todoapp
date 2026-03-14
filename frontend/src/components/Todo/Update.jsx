@@ -38,7 +38,7 @@ const Update = ({ display, update, refetch }) => {
           onClick={async () => {
             const email = sessionStorage.getItem("email");
             await axios.put(
-              `http://localhost:1000/api/v2/updateTask/${update._id}`,
+              `https://todoapp-9xbj.vercel.app//api/v2/updateTask/${update._id}`,
               {
                 title: Inputs.title,
                 body: Inputs.body,

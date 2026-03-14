@@ -24,7 +24,7 @@ const Signup = () => {
     }
     try {
       const response = await axios.post(
-        "http://localhost:1000/api/v1/register",
+        "https://todoapp-9xbj.vercel.app//api/v1/register",
         Inputs,
       );
       alert(response.data.message); // ← now clearly visible
