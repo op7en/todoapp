@@ -1,0 +1,47 @@
+.signup {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.column {
+  min-height: 100vh; /* ✅ back to full height on desktop */
+}
+
+.input-signup {
+  outline: none;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.sign-up-heading {
+  font-size: 48px;
+  color: red;
+  opacity: 0.8;
+}
+
+.btn-signup {
+  background-color: red;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  width: auto;
+  align-self: flex-start;
+  padding: 8px 24px;
+  cursor: pointer;
+}
+
+/* ✅ Only override on mobile */
+@media (max-width: 768px) {
+  .sign-up-heading {
+    font-size: 32px;
+  }
+  .column {
+    min-height: auto;
+    padding: 20px 0;
+  }
+  .col-left {
+    min-height: auto;
+  }
+}

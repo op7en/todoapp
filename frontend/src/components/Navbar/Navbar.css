@@ -1,0 +1,25 @@
+.user-png {
+  width: 20px;
+  height: 20px;
+}
+
+.navbar-brand {
+  color: red;
+  font-size: 24px;
+  font-weight: bold;
+}
+.btn-nav {
+  background-color: red;
+  border-radius: 8px;
+  color: white !important;
+  font-weight: bold;
+  display: inline-block; /* ✅ prevents full width stretch */
+}
+
+@media (max-width: 991px) {
+  .btn-nav {
+    display: inline-block;
+    width: auto; /* ✅ not full width on mobile */
+    margin: 4px 0; /* ✅ small spacing between buttons */
+  }
+}
