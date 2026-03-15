@@ -57,6 +57,7 @@
 }
 
 .todo-update {
+  display: none; /* ✅ add this */
   position: fixed;
   top: 0;
   left: 0;
@@ -66,4 +67,9 @@
   z-index: 999;
   justify-content: center;
   align-items: center;
+}
+.update {
+  border-radius: 10px;
+  width: 500px;
+  max-width: 90%;
 }
