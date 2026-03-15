@@ -18,7 +18,7 @@ const Singin = () => {
   const handleSubmit = async (e) => {
     try {
       const response = await axios.post(
-        "https://todoapp-9xbj.vercel.app//api/v1/signin",
+        "https://todoapp-9xbj.vercel.app/api/v1/signin",
         Inputs,
       );
       console.log(response.data); // ← add this to see what comes back

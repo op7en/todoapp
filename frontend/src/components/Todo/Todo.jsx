@@ -24,7 +24,7 @@ const Todo = () => {
     const id = sessionStorage.getItem("id");
     if (!id) return; // ✅ stop if not logged in
     const response = await axios.get(
-      `https://todoapp-9xbj.vercel.app//api/v2/getTasks/${id}`,
+      `https://todoapp-9xbj.vercel.app/api/v2/getTasks/${id}`,
     );
     setTodos(response.data.list);
   };
@@ -37,7 +37,7 @@ const Todo = () => {
     if (id) {
       const fetch = async () => {
         await axios
-          .get(`https://todoapp-9xbj.vercel.app//api/v2/getTasks/${id}`)
+          .get(`https://todoapp-9xbj.vercel.app/api/v2/getTasks/${id}`)
           .then((response) => {
             setTodos(response.data.list); // ✅ change response.data to response.data.list
             console.log(response.data.list);
@@ -61,7 +61,7 @@ const Todo = () => {
     } else {
       if (id) {
         await axios
-          .post("https://todoapp-9xbj.vercel.app//api/v2/addTask", {
+          .post("https://todoapp-9xbj.vercel.app/api/v2/addTask", {
             title: Inputs.title,
             body: Inputs.body,
             id: id,
@@ -85,12 +85,9 @@ const Todo = () => {
     const id = sessionStorage.getItem("id");
     if (id) {
       await axios
-        .delete(
-          `https://todoapp-9xbj.vercel.app//api/v2/deleteTask/${Cardid}`,
-          {
-            data: { id: id },
-          },
-        )
+        .delete(`https://todoapp-9xbj.vercel.app/api/v2/deleteTask/${Cardid}`, {
+          data: { id: id },
+        })
         .then((response) => {
           console.log(response.data);
           setTodos(todos.filter((item) => item._id !== Cardid)); // remove from UI too

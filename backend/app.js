@@ -6,7 +6,12 @@ const cors = require("cors");
 const auth = require("./routes/auth");
 const list = require("./routes/list");
 
-app.use(cors()); // ← only once
+app.use(
+  cors({
+    origin: "https://todoapp-five-kohl.vercel.app",
+  }),
+);
+
 app.use(express.json()); // ← must be before routes
 
 app.get("/", (req, res) => {
