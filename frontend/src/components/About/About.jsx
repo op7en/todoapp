@@ -8,28 +8,25 @@ const About = () => {
           <h1>О нас</h1>
         </div>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-          voluptas quia consequuntur, corrupti aliquid natus harum mollitia
-          accusantium adipisci at accusamus! Alias sit tempora dignissimos
-          dolorum, repellendus natus ut dolorem! Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Doloribus voluptas quia consequuntur,
-          corrupti aliquid natus harum mollitia accusantium adipisci at
-          accusamus! Alias sit tempora dignissimos dolorum, repellendus natus ut
-          dolorem! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Doloribus voluptas quia consequuntur, corrupti aliquid natus harum
-          mollitia accusantium adipisci at accusamus! Alias sit tempora
-          dignissimos dolorum, repellendus natus ut dolorem! <br />
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-          voluptas quia consequuntur, corrupti aliquid natus harum mollitia
-          accusantium adipisci at accusamus! Alias sit tempora dignissimos
-          dolorum, repellendus natus ut dolorem! Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Doloribus voluptas quia consequuntur,
-          corrupti aliquid natus harum mollitia accusantium adipisci at
-          accusamus! Alias sit tempora dignissimos dolorum, repellendus natus ut
-          dolorem! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Doloribus voluptas quia consequuntur, corrupti aliquid natus harum
-          mollitia accusantium adipisci at accusamus! Alias sit tempora
-          dignissimos dolorum, repellendus natus ut dolorem!
+          ToDo — это простое и удобное приложение для управления вашими
+          задачами. Мы создали его для того, чтобы помочь вам организовать свою
+          жизнь и работу, не теряя важные дела из виду.
+        </p>
+        <p>
+          С помощью нашего приложения вы можете создавать задачи, редактировать
+          их и удалять по мере выполнения. Все ваши задачи сохраняются в базе
+          данных и доступны вам с любого устройства после входа в аккаунт.
+        </p>
+        <p>
+          Приложение построено на современном стеке технологий: React на
+          фронтенде, Node.js и Express на бэкенде, MongoDB в качестве базы
+          данных. Авторизация позволяет каждому пользователю иметь свой личный
+          список задач, защищённый паролем.
+        </p>
+        <p>
+          Чтобы начать, просто зарегистрируйтесь, войдите в аккаунт и добавьте
+          свою первую задачу. Мы надеемся, что наше приложение поможет вам стать
+          более организованным и продуктивным!
         </p>
       </div>
     </div>

@@ -1,23 +1,37 @@
 .signup {
   width: 100%;
   min-height: 100vh;
+  background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
 }
 
 .column {
-  min-height: 100vh; /* ✅ back to full height on desktop */
+  min-height: 100vh;
 }
 
-.input-signup {
-  outline: none;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  width: 100%;
+.col-left {
+  background-color: red;
 }
 
 .sign-up-heading {
   font-size: 48px;
-  color: red;
-  opacity: 0.8;
+  color: white;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.input-signup {
+  outline: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 15px;
+  transition: border-color 0.2s;
+  background-color: #fafafa;
+}
+
+.input-signup:focus {
+  border-color: red;
+  background-color: #fff;
 }
 
 .btn-signup {
@@ -25,14 +39,25 @@
   color: white;
   outline: none;
   border: none;
-  border-radius: 6px;
-  width: auto;
-  align-self: flex-start;
-  padding: 8px 24px;
+  border-radius: 8px;
+  width: 100%;
+  padding: 12px 24px;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.2s;
+  margin-top: 8px;
 }
 
-/* ✅ Only override on mobile */
+.btn-signup:hover {
+  background-color: #cc0000;
+}
+
+.btn-signup:disabled {
+  background-color: #ff8080;
+  cursor: not-allowed;
+}
+
 @media (max-width: 768px) {
   .sign-up-heading {
     font-size: 32px;
@@ -42,6 +67,6 @@
     padding: 20px 0;
   }
   .col-left {
-    min-height: auto;
+    min-height: 150px;
   }
 }

@@ -47,7 +47,7 @@ const Singin = () => {
                 className="p-2 my-3 input-signup"
                 type="email"
                 name="email"
-                placeholder="Enter Your Email"
+                placeholder="Введите вашу электронную почту"
                 value={Inputs.email}
                 onChange={change}
               />
@@ -55,7 +55,7 @@ const Singin = () => {
                 className="p-2 my-3 input-signup"
                 type="password"
                 name="password"
-                placeholder="Enter Your Password"
+                placeholder="Введите ваш пароль"
                 value={Inputs.password}
                 onChange={change}
               />

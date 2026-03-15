@@ -18,7 +18,7 @@ const Update = ({ display, update, refetch }) => {
   };
 
   return (
-    <div className="p-5 bg-primary d-flex justify-content-center align-items-start flex-column update">
+    <div className="p-5 d-flex justify-content-center align-items-start flex-column update">
       <h3>Обновите ваше задание</h3>
       <input
         type="text"

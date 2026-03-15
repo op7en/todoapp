@@ -48,7 +48,7 @@ const Signup = () => {
                 className="p-2 my-3 input-signup"
                 type="email"
                 name="email"
-                placeholder="Enter Your Email"
+                placeholder="Введите вашу электронную почту"
                 onChange={change}
                 value={Inputs.email}
                 required
@@ -57,7 +57,7 @@ const Signup = () => {
                 className="p-2 my-3 input-signup"
                 type="username"
                 name="username"
-                placeholder="Enter Your Username"
+                placeholder="Введите ваше пользовательское имя"
                 onChange={change}
                 value={Inputs.username}
                 required
@@ -66,7 +66,7 @@ const Signup = () => {
                 className="p-2 my-3 input-signup"
                 type="password"
                 name="password"
-                placeholder="Enter Your Password"
+                placeholder="Введите пароль"
                 onChange={change}
                 value={Inputs.password}
                 required
@@ -75,7 +75,7 @@ const Signup = () => {
                 className="p-2 my-3 input-signup"
                 type="password"
                 name="confirmPassword"
-                placeholder="Repeat Your Password"
+                placeholder="Повторите ваш пароль"
                 onChange={change}
                 value={Inputs.confirmPassword}
                 required
