@@ -19,6 +19,7 @@ const TodoCards = ({ title, body, id, delid, dis, updateId, toBeUpdate }) => {
             dis("block");
             toBeUpdate(updateId);
           }}
+          style={{ cursor: "pointer" }}
         >
           <GrDocumentUpdate className="card-icons" />
           Update
