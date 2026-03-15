@@ -97,9 +97,9 @@ const Todo = () => {
       toast.error("Пожалуйста авторизуйтесь");
     }
   };
-
   const dis = (value) => {
-    document.getElementById("todo-update").style.display = value;
+    document.getElementById("todo-update").style.display =
+      value === "block" ? "flex" : "none";
   };
   return (
     <>
