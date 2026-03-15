@@ -5,7 +5,7 @@
 ## 🌐 Демо
 [https://todoapp-five-kohl.vercel.app/](https://todoapp-five-kohl.vercel.app/)
 
-> ⚠️ Бэкенд развёрнут на бесплатном хостинге, поэтому первый запрос может занять несколько секунд.
+> ⚠️ Backend развёрнут на бесплатном хостинге, поэтому первый запрос может занять несколько секунд. 
 
 ## ✨ Функциональность
 - Регистрация и авторизация пользователей
@@ -16,14 +16,14 @@
 
 ## 🛠 Технологии
 
-**Фронтенд:**
+**Frontend:**
 - React.js
 - Redux
 - Bootstrap
 - Axios
 - React Toastify
 
-**Бэкенд:**
+**Backend:**
 - Node.js
 - Express.js
 - MongoDB Atlas
@@ -35,14 +35,14 @@
 
 ## 🚀 Локальный запуск
 
-### Бэкенд
+### Backend
 ```bash
 cd backend
 npm install
 node app.js
 ```
 
-### Фронтенд
+### Frontend
 ```bash
 cd frontend
 npm install
@@ -71,4 +71,5 @@ todoapp/
 ```
 
 ## 👨‍💻 Автор
+Перевалов Олег
 Разработано как учебный проект для портфолио.
