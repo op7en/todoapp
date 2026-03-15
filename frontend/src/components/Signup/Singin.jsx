@@ -10,18 +10,19 @@ const Singin = () => {
     email: "",
     password: "",
   });
+  const [loading, setLoading] = useState(false);
   const change = (e) => {
     const { name, value } = e.target;
     setInputs((prev) => ({ ...prev, [name]: value }));
   };
   const history = useNavigate();
-  const handleSubmit = async (e) => {
+  const handleSubmit = async () => {
+    setLoading(true);
     try {
       const response = await axios.post(
         "https://todoapp-9xbj.vercel.app/api/v1/signin",
         Inputs,
       );
-      console.log(response.data); // ← add this to see what comes back
       alert("Вход выполнен успешно!");
       sessionStorage.setItem("id", response.data.others._id);
       sessionStorage.setItem("email", response.data.others.email);
@@ -31,6 +32,7 @@ const Singin = () => {
       console.log(err.response?.data);
       alert(err.response?.data?.message || "Что то пошло не так");
     }
+    setLoading(false);
   };
   return (
     <div className="signup">
@@ -57,8 +59,12 @@ const Singin = () => {
                 value={Inputs.password}
                 onChange={change}
               />
-              <button className="btn-signup p-2" onClick={handleSubmit}>
-                Войти
+              <button
+                className="btn-signup p-2"
+                onClick={handleSubmit}
+                disabled={loading}
+              >
+                {loading ? "Загрузка..." : "Войти"}
               </button>
             </div>
           </div>

@@ -11,15 +11,17 @@ const Signup = () => {
     password: "",
     confirmPassword: "",
   });
-
+  const [loading, setLoading] = useState(false);
   const change = (e) => {
     const { name, value } = e.target;
     setInputs((prev) => ({ ...prev, [name]: value }));
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     if (Inputs.password !== Inputs.confirmPassword) {
       alert("Пароли не совпадают!");
+      setLoading(false);
       return;
     }
     try {
@@ -27,13 +29,14 @@ const Signup = () => {
         "https://todoapp-9xbj.vercel.app/api/v1/register",
         Inputs,
       );
-      alert(response.data.message); // ← now clearly visible
+      alert(response.data.message);
       setInputs({ email: "", username: "", password: "", confirmPassword: "" });
       history("/signin");
     } catch (err) {
-      console.log(err.response.data);
+      console.log(err.response?.data);
       alert(err.response?.data?.message || "Что то пошло не так");
     }
+    setLoading(false);
   };
   return (
     <div className="signup">
@@ -77,8 +80,12 @@ const Signup = () => {
                 value={Inputs.confirmPassword}
                 required
               />
-              <button className="btn-signup p-2" onClick={handleSubmit}>
-                Зарегистрироваться
+              <button
+                className="btn-signup p-2"
+                onClick={handleSubmit}
+                disabled={loading}
+              >
+                {loading ? "Загрузка..." : "Зарегистрироваться"}
               </button>
             </div>
           </div>

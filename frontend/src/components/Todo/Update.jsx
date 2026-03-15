@@ -15,7 +15,7 @@ const Update = ({ display, update, refetch }) => {
     const { name, value } = e.target;
     setInputs((prev) => ({ ...prev, [name]: value }));
   };
-
+  const [loading, setLoading] = useState(false);
   return (
     <div className="p-5 bg-primary d-flex justify-content-center align-items-start flex-column update">
       <h3>Обновите ваше задание</h3>
@@ -49,12 +49,24 @@ const Update = ({ display, update, refetch }) => {
             refetch(); // ✅ added here
             display("none");
           }}
+          disabled={loading}
         >
-          Обновить
+          {loading ? "Загрузка..." : "Обновить"}
         </button>
         <button
           className="btn btn-danger my-4 mx-3"
-          onClick={() => display("none")}
+          onClick={async () => {
+            setLoading(true);
+            const email = sessionStorage.getItem("email");
+            await axios.put(
+              `https://todoapp-9xbj.vercel.app/api/v2/updateTask/${update._id}`,
+              { title: Inputs.title, body: Inputs.body, email: email },
+            );
+            toast.success("Задание обновлено!");
+            refetch();
+            display("none");
+            setLoading(false);
+          }}
         >
           Закрыть
         </button>

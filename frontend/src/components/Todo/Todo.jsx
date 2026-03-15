@@ -10,6 +10,7 @@ const Todo = () => {
   const [Inputs, setInputs] = useState({ title: "", body: "" });
   const [todos, setTodos] = useState([]);
   const [selectedTodo, setSelectedTodo] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const update = (index) => {
     const id = sessionStorage.getItem("id");
@@ -53,32 +54,30 @@ const Todo = () => {
     const { name, value } = e.target;
     setInputs({ ...Inputs, [name]: value });
   };
-  const submit = async () => {
-    const id = sessionStorage.getItem("id");
 
+  const submit = async () => {
+    setLoading(true);
+    const id = sessionStorage.getItem("id");
     if (Inputs.title === "" || Inputs.body === "") {
       toast.error("Название и текст должны быть заполнены");
     } else {
       if (id) {
-        await axios
-          .post("https://todoapp-9xbj.vercel.app/api/v2/addTask", {
-            title: Inputs.title,
-            body: Inputs.body,
-            id: id,
-          })
-          .then((response) => {
-            console.log(response);
-          });
-        setTodos([...todos, Inputs]); // ✅ was setArray([...Array, Inputs])
+        await axios.post("https://todoapp-9xbj.vercel.app/api/v2/addTask", {
+          title: Inputs.title,
+          body: Inputs.body,
+          id: id,
+        });
+        setTodos([...todos, Inputs]);
         setInputs({ title: "", body: "" });
         toast.success("Ваше задание добавлено");
       } else {
-        setTodos([...todos, Inputs]); // ✅ was setArray([...Array, Inputs])
+        setTodos([...todos, Inputs]);
         setInputs({ title: "", body: "" });
         toast.success("Ваше задание добавлено");
         toast.error("Войдите или зарегистрируйтесь!");
       }
     }
+    setLoading(false);
   };
   // ✅ Correct
   const del = async (Cardid) => {
@@ -127,8 +126,12 @@ const Todo = () => {
             />
           </div>
           <div className="w-50 d-flex justify-content-end my-3">
-            <button className="home-btn px-2 py-1" onClick={submit}>
-              Добавить
+            <button
+              className="home-btn px-2 py-1"
+              onClick={submit}
+              disabled={loading}
+            >
+              {loading ? "Загрузка..." : "Добавить"}
             </button>
           </div>
         </div>
