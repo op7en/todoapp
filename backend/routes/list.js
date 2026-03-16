@@ -5,10 +5,10 @@ const List = require("../models/list");
 // create
 router.post("/addTask", async (req, res) => {
   try {
-    const { title, body, id } = req.body;
+    const { title, body, id, deadline } = req.body; // ✅ add deadline
     const existingUser = await User.findById(id);
     if (existingUser) {
-      const list = new List({ title, body, user: existingUser });
+      const list = new List({ title, body, user: existingUser, deadline });
       await list.save();
       existingUser.list.push(list);
       await existingUser.save();

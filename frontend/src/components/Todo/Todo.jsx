@@ -7,7 +7,7 @@ import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 
 const Todo = () => {
-  const [Inputs, setInputs] = useState({ title: "", body: "" });
+  const [Inputs, setInputs] = useState({ title: "", body: "", deadline: "" });
   const [todos, setTodos] = useState([]);
   const [selectedTodo, setSelectedTodo] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -66,13 +66,14 @@ const Todo = () => {
           title: Inputs.title,
           body: Inputs.body,
           id: id,
+          deadline: Inputs.deadline,
         });
         setTodos([...todos, Inputs]);
-        setInputs({ title: "", body: "" });
+        setInputs({ title: "", body: "", deadline: "" });
         toast.success("Ваше задание добавлено");
       } else {
         setTodos([...todos, Inputs]);
-        setInputs({ title: "", body: "" });
+        setInputs({ title: "", body: "", deadline: "" });
         toast.success("Ваше задание добавлено");
         toast.error("Войдите или зарегистрируйтесь!");
       }
@@ -124,6 +125,13 @@ const Todo = () => {
               className="p-2 todo-inputs"
               onChange={change}
             />
+            <input
+              type="date"
+              name="deadline"
+              className="my-2 p-2 todo-inputs"
+              value={Inputs.deadline}
+              onChange={change}
+            />
           </div>
           <div className="w-50 d-flex justify-content-end my-3">
             <button
@@ -149,6 +157,8 @@ const Todo = () => {
                       dis={dis}
                       updateId={index}
                       toBeUpdate={update}
+                      deadline={item.deadline}
+                      createdAt={item.createdAt}
                     />
                   </div>
                 ))}

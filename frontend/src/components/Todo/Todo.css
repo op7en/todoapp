@@ -147,3 +147,15 @@
   min-height: 100px;
   resize: vertical;
 }
+
+.todo-card-dates {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+body.dark .todo-card-dates small {
+  color: #aaa;
+}
