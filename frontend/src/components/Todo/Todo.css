@@ -159,3 +159,26 @@
 body.dark .todo-card-dates small {
   color: #aaa;
 }
+
+.created-date {
+  color: #666;
+}
+
+body.dark .created-date {
+  color: #aaa !important;
+}
+
+body.dark .todo-card-dates small {
+  color: #aaa !important;
+}
+
+.deadline-label {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 4px;
+  display: block;
+}
+
+body.dark .deadline-label {
+  color: #aaa;
+}

@@ -34,7 +34,7 @@ const Navbar = () => {
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             <b>
-              <GiWhiteBook /> &nbsp; TODO
+              <GiWhiteBook /> &nbsp; ToDo
             </b>
           </Link>
           <button

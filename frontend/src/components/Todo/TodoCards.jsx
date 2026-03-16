@@ -17,8 +17,12 @@ const TodoCards = ({
   const isOverdue = deadline && new Date(deadline) < new Date();
 
   const formatDate = (date) => {
-    return new Date(date).toLocaleDateString("ru-RU");
+    if (!date) return null;
+    const d = new Date(date);
+    if (isNaN(d.getTime())) return null; // ✅ return null if invalid
+    return d.toLocaleDateString("ru-RU");
   };
+
   const [delLoading, setDelLoading] = useState(false);
 
   return (
@@ -27,10 +31,12 @@ const TodoCards = ({
         <h5>{title}</h5>
         <p className="todo-card-p">{body.split("", 77)}...</p>
         <div className="todo-card-dates">
-          <small className="text-muted">
-            📅 Создано: {formatDate(createdAt)}
-          </small>
-          {deadline && (
+          {createdAt && formatDate(createdAt) && (
+            <small className="created-date">
+              📅 Создано: {formatDate(createdAt)}
+            </small>
+          )}
+          {deadline && formatDate(deadline) && (
             <small className={isOverdue ? "text-danger" : "text-success"}>
               ⏰ Дедлайн: {formatDate(deadline)}
               {isOverdue && " (просрочено!)"}

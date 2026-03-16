@@ -125,13 +125,18 @@ const Todo = () => {
               className="p-2 todo-inputs"
               onChange={change}
             />
-            <input
-              type="date"
-              name="deadline"
-              className="my-2 p-2 todo-inputs"
-              value={Inputs.deadline}
-              onChange={change}
-            />
+            <div className="my-2 p-2">
+              <label className="deadline-label">
+                Введите дату до которой нужно сделать задание:
+              </label>
+              <input
+                type="date"
+                name="deadline"
+                className="p-2 todo-inputs"
+                value={Inputs.deadline}
+                onChange={change}
+              />
+            </div>
           </div>
           <div className="w-50 d-flex justify-content-end my-3">
             <button
