@@ -2,6 +2,9 @@
   background-color: #ffffff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   padding: 12px 0;
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s;
 }
 
 .navbar-brand {
@@ -40,10 +43,110 @@
   color: white !important;
 }
 
+.theme-toggle {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s;
+  color: #333;
+}
+
+.theme-toggle:hover {
+  background-color: #f0f0f0;
+}
+
 @media (max-width: 991px) {
   .btn-nav {
     display: inline-block;
     width: auto;
     margin: 4px 0;
   }
+}
+
+/* ===== DARK MODE ===== */
+body.dark {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+}
+
+body.dark .navbar {
+  background-color: #2d2d2d;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .nav-link {
+  color: #f0f0f0 !important;
+}
+
+body.dark .nav-link:hover {
+  color: red !important;
+}
+
+body.dark .theme-toggle {
+  border-color: #555;
+  color: #f0f0f0;
+}
+
+body.dark .theme-toggle:hover {
+  background-color: #444;
+}
+
+body.dark .todo {
+  background-color: #1a1a1a;
+}
+
+body.dark .todo-inputs-div {
+  background-color: #2d2d2d;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 4px 20px;
+}
+
+body.dark .todo-inputs {
+  color: #f0f0f0;
+}
+
+body.dark .todo-card {
+  background-color: #2d2d2d;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 2px 12px;
+}
+
+body.dark .todo-card h5,
+body.dark .todo-card-p {
+  color: #f0f0f0;
+}
+
+body.dark .update {
+  background-color: #2d2d2d;
+  border-color: #444;
+  color: #f0f0f0;
+}
+
+body.dark .update h3 {
+  color: #f0f0f0;
+}
+
+body.dark .update .todo-inputs {
+  background-color: #3d3d3d !important;
+  border-color: #555 !important;
+  color: #f0f0f0;
+}
+
+body.dark .signup {
+  background: #1a1a1a;
+}
+
+body.dark .input-signup {
+  background-color: #2d2d2d;
+  border-color: #555;
+  color: #f0f0f0;
+}
+
+body.dark .home {
+  background: #1a1a1a;
+}
+
+body.dark .home-title {
+  color: #f0f0f0;
 }

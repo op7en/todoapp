@@ -118,6 +118,8 @@
   max-width: 90%;
   background: white;
   color: #333;
+  border: 1px solid #e0e0e0;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 8px 30px;
 }
 
 .update h3 {
@@ -127,17 +129,17 @@
 }
 
 .update .todo-inputs {
-  border: 1px solid #e0e0e0;
+  border: 1px solid #e0e0e0 !important;
   border-radius: 8px;
-  background-color: #f8f9fa;
+  background-color: #f8f9fa !important;
   padding: 10px;
   font-size: 15px;
   transition: border-color 0.2s;
 }
 
 .update .todo-inputs:focus {
-  border-color: red;
-  background-color: white;
+  border-color: red !important;
+  background-color: white !important;
   outline: none;
 }
 
