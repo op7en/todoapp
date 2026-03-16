@@ -150,3 +150,24 @@ body.dark .home {
 body.dark .home-title {
   color: #f0f0f0;
 }
+
+body.dark .Toastify__toast {
+  background-color: #2d2d2d;
+  color: #f0f0f0;
+}
+
+body.dark .Toastify__toast--success {
+  background-color: #1e3a2f;
+}
+
+body.dark .Toastify__toast--error {
+  background-color: #3a1e1e;
+}
+
+body.dark .Toastify__close-button {
+  color: #f0f0f0;
+}
+
+body.dark .Toastify__progress-bar {
+  background-color: rgba(255, 255, 255, 0.3);
+}
