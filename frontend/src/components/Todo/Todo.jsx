@@ -162,8 +162,8 @@ const Todo = () => {
                       dis={dis}
                       updateId={index}
                       toBeUpdate={update}
-                      deadline={item.deadline}
-                      createdAt={item.createdAt}
+                      deadline={item.deadline} // ✅ is this there?
+                      createdAt={item.createdAt} // ✅ is this there?
                     />
                   </div>
                 ))}
