@@ -9,21 +9,25 @@ import { BsMoon, BsSun } from "react-icons/bs";
 const Navbar = () => {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const dispatch = useDispatch();
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add("dark");
-    } else {
-      document.body.classList.remove("dark");
-    }
-  }, [darkMode]);
 
   const logout = () => {
     sessionStorage.clear("id");
     dispatch(authActions.logout());
   };
+  const [darkMode, setDarkMode] = useState(() => {
+    // ✅ read from localStorage on first load
+    return localStorage.getItem("theme") === "dark";
+  });
 
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark");
+      localStorage.setItem("theme", "dark"); // ✅ save to localStorage
+    } else {
+      document.body.classList.remove("dark");
+      localStorage.setItem("theme", "light"); // ✅ save to localStorage
+    }
+  }, [darkMode]);
   return (
     <div>
       <nav className="navbar navbar-expand-lg">
